@@ -25,7 +25,7 @@ export class NavMenu extends React.Component<{}, {}> {
               </li>
               <li>
                 <NavLink to={"/flipcard"} exact activeClassName="active">
-                  <span className="glyphicon glyphicon-home" /> Flipcard
+                  <span className="glyphicon glyphicon glyphicon-th" /> Flipcards
                 </NavLink>
               </li>
               <li>

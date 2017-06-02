@@ -22,7 +22,7 @@ const FlipperComponent: React.StatelessComponent<FlipperProps> = props => (
   </div>
 )
 
-export const Flipper = styled(FlipperComponent) `
+export const Card = styled(FlipperComponent) `
   transition: 0.6s;
   transform-style: preserve-3d;
 
@@ -31,7 +31,7 @@ export const Flipper = styled(FlipperComponent) `
   transform: ${props => props.flipped ? "rotateY(180deg)" : "rotateY(0deg)"};
 `
 
-const Face = styled.div`
+const CardFace = styled.div`
   width: 100%;
   backface-visibility: hidden;
 
@@ -40,12 +40,12 @@ const Face = styled.div`
   left: 0;
 `
 
-export const Front = styled(Face) `
+export const CardFront = styled(CardFace) `
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
 `
 
-export const Back = styled(Face) `
+export const CardBack = styled(CardFace) `
   transform: rotateY(180deg);
 `
