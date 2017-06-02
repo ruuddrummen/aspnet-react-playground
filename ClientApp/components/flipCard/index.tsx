@@ -17,18 +17,10 @@ export interface CardFaceProps extends Props {
     flip?: () => void
 }
 
-const Center = styled.div`
-    text-align: center;
-`
-
-const Button = styled.button`
-    width: 100%;
-    font-size: 1.5em;
-`
-
 export function flipCard<PFront extends CardFaceProps, PBack extends CardFaceProps>(
     Front: new () => React.Component<PFront, any>,
-    Back: new () => React.Component<PBack, any>) {
+    Back: new () => React.Component<PBack, any>
+): React.ComponentClass<FlipCardProps<PFront, PBack>> {
     class FlipCardComponent extends React.Component<FlipCardProps<PFront, PBack>, FlipCardState> {
         constructor(props) {
             super(props)
