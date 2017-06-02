@@ -1,5 +1,4 @@
 import * as React from "react"
-import styled from "styled-components"
 import { Props } from "../common"
 import { CardContainer, Perspective, Flipper, Front, Back } from "./Controls"
 
@@ -10,7 +9,6 @@ interface FlipCardProps<TFront, TBack> extends Props {
 
 interface FlipCardState {
   flipped: boolean
-  value: string
 }
 
 export interface CardFaceProps extends Props {
@@ -25,8 +23,7 @@ export function flipCard<PFront extends CardFaceProps, PBack extends CardFacePro
     constructor(props: FlipCardProps<PFront, PBack>) {
       super(props)
       this.state = {
-        flipped: false,
-        value: ""
+        flipped: false
       }
     }
 

@@ -1,9 +1,7 @@
-import * as React from "react"
 import styled from "styled-components"
 
-export const Header = styled.div`
+export const Header = styled.h1`
   text-align: center;
-  overflow: auto;
 `
 
 export const Body = styled.div`

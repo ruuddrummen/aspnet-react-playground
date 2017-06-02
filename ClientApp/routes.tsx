@@ -5,7 +5,6 @@ import { Home } from "./components/Home";
 import { FetchData } from "./components/FetchData";
 import { Counter } from "./components/Counter";
 import { DemoFlipCardPage } from "./pages/DemoFlipCardPage";
-import { DemoFlipCard } from "./components/DemoFlipCard";
 
 export const routes = (
   <Layout>

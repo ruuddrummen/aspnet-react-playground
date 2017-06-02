@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-import { flipCard, CardFaceProps } from "../flipCard"
+import { CardFaceProps } from "../flipCard"
 import { Header, Body, Footer, FlipButton } from "./Controls"
 
 export interface FrontProps extends CardFaceProps {
@@ -12,9 +12,7 @@ const FrontComponent: React.StatelessComponent<FrontProps> = props => {
 
   return (
     <div className={props.className}>
-      <Header>
-        <h1>Front</h1>
-      </Header>
+      <Header>Front</Header>
       <Body>
         <p>Flip and enter some text!</p>
         <h3>{props.value}</h3>
@@ -27,5 +25,6 @@ const FrontComponent: React.StatelessComponent<FrontProps> = props => {
 }
 
 export const FrontFace = styled(FrontComponent) `
-    background-color: palevioletred;
+  overflow: auto;
+  background-color: palevioletred;
 `

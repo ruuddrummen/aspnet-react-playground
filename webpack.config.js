@@ -23,6 +23,7 @@ module.exports = env => {
             enforce: "pre",
             loader: "tslint-loader",
             options: {
+              typeCheck: !isDevBuild,
               failOnHint: !isDevBuild
             }
           },
