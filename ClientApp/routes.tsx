@@ -4,14 +4,14 @@ import { Layout } from "./components/Layout";
 import { Home } from "./components/Home";
 import { FetchData } from "./components/FetchData";
 import { Counter } from "./components/Counter";
-import { DemoFlipCardPage } from "./components/DemoFlipCardPage";
+import { DemoFlipCardPage } from "./pages/DemoFlipCardPage";
 import { DemoFlipCard } from "./components/DemoFlipCard";
 
 export const routes = (
-    <Layout>
-        <Route exact path="/" component={Home} />
-        <Route path="/flipcard" component={DemoFlipCardPage} />
-        <Route path="/counter" component={Counter} />
-        <Route path="/fetchdata" component={FetchData} />
-    </Layout>
+  <Layout>
+    <Route exact path="/" component={Home} />
+    <Route path="/flipcard" component={DemoFlipCardPage} />
+    <Route path="/counter" component={Counter} />
+    <Route path="/fetchdata" component={FetchData} />
+  </Layout>
 );

@@ -1,13 +1,13 @@
 import * as React from "react"
 import styled from "styled-components"
 import { flipCard, CardFaceProps } from "../flipCard"
-import { Header, Body, Footer, Button } from "./Controls"
+import { Header, Body, Footer, FlipButton } from "./Controls"
 
-export interface FrontFaceProps extends CardFaceProps {
+export interface FrontProps extends CardFaceProps {
   value: string
 }
 
-const FrontFaceComponent: React.StatelessComponent<FrontFaceProps> = props => {
+const FrontComponent: React.StatelessComponent<FrontProps> = props => {
   const flip = (event: React.MouseEvent<HTMLButtonElement>) => props.flip()
 
   return (
@@ -20,12 +20,12 @@ const FrontFaceComponent: React.StatelessComponent<FrontFaceProps> = props => {
         <h3>{props.value}</h3>
       </Body>
       <Footer>
-        <Button onClick={flip}>Flip</Button>
+        <FlipButton onClick={flip}>Flip</FlipButton>
       </Footer>
     </div>
   )
 }
 
-export const FrontFace = styled(FrontFaceComponent) `
+export const FrontFace = styled(FrontComponent) `
     background-color: palevioletred;
 `
