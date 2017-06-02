@@ -20,6 +20,14 @@ module.exports = env => {
         rules: [
           {
             test: /\.tsx?$/,
+            enforce: "pre",
+            loader: "tslint-loader",
+            options: {
+              failOnHint: !isDevBuild
+            }
+          },
+          {
+            test: /\.tsx?$/,
             include: /ClientApp/,
             use: "awesome-typescript-loader?silent=true"
           },
