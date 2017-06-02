@@ -2,8 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import { Props } from "../common"
 
-interface FlipCardProps<TFront, TBack> {
-    className?: string
+interface FlipCardProps<TFront, TBack> extends Props {
     frontProps: TFront
     backProps: TBack
 }
@@ -22,7 +21,7 @@ export function flipCard<PFront extends CardFaceProps, PBack extends CardFacePro
     Back: new () => React.Component<PBack, any>
 ): React.ComponentClass<FlipCardProps<PFront, PBack>> {
     class FlipCardComponent extends React.Component<FlipCardProps<PFront, PBack>, FlipCardState> {
-        constructor(props) {
+        constructor(props: FlipCardProps<PFront, PBack>) {
             super(props)
             this.state = {
                 flipped: false,
@@ -36,21 +35,17 @@ export function flipCard<PFront extends CardFaceProps, PBack extends CardFacePro
             })
         }
 
-        updateValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-            this.setState({
-                value: event.currentTarget.value
-            })
-        }
-
         render() {
             return (
                 <div className={this.props.className}>
                     <div className={`${this.props.className} ${this.state.flipped ? "flip" : ""}`}>
                         <div className="flipper">
                             <div className="front">
+                                // tslint:disable-next-line:no-any
                                 <Front {...this.props.frontProps as any} flip={this.flip} />
                             </div>
                             <div className="back">
+                                // tslint:disable-next-line:no-any
                                 <Back {...this.props.backProps as any} flip={this.flip} />
                             </div>
                         </div>

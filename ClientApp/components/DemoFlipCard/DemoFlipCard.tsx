@@ -13,8 +13,8 @@ interface DemoFlipCardState {
 const DemoFlipCardComponent = flipCard(FrontFace, BackFace)
 
 export class DemoFlipCard extends React.Component<null, DemoFlipCardState> {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
             value: "",
             flipped: false
