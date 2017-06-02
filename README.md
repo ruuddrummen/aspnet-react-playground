@@ -1,1 +1,6 @@
-aspnet-react-playground
+# tl;dr
+```
+dotnet restore
+yarn install
+dotnet run
+```
