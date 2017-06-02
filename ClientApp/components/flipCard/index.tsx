@@ -20,7 +20,7 @@ export interface CardFaceProps extends Props {
 export function flipCard<PFront extends CardFaceProps, PBack extends CardFaceProps>(
   FrontComponent: new () => React.Component<PFront, any>,
   BackComponent: new () => React.Component<PBack, any>
-): React.ComponentClass<FlipCardProps<PFront, PBack>> {
+) {
   return class FlipCardComponent extends React.Component<FlipCardProps<PFront, PBack>, FlipCardState> {
     constructor(props: FlipCardProps<PFront, PBack>) {
       super(props)
