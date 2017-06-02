@@ -2,13 +2,13 @@ import * as React from "react"
 import styled from "styled-components"
 
 export const Header = styled.div`
-    text-align: center;
-    overflow: auto;
+  text-align: center;
+  overflow: auto;
 `
 
 export const Body = styled.div`
-    height: 400px;
-    padding: 15px;
+  height: 400px;
+  padding: 15px;
 `
 
 export const Footer = styled.div`
@@ -18,7 +18,7 @@ export const Center = styled.div`
 `
 
 export const Button = styled.button`
-    height: 3em;
-    width: 100%;
-    font-size: 1.5em;
+  height: 3em;
+  width: 100%;
+  font-size: 1.5em;
 `

@@ -1,5 +1,8 @@
-// Place your settings in this file to overwrite default and user settings.
-{
-    "tslint.jsEnable": true,
-    "tslint.autoFixOnSave": true
-}
+    // Place your settings in this file to overwrite default and user settings.
+    {
+      "tslint.jsEnable": true,
+      "tslint.autoFixOnSave": true,
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.detectIndentation": false
+    }

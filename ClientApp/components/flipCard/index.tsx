@@ -3,59 +3,57 @@ import styled from "styled-components"
 import { Props } from "../common"
 
 interface FlipCardProps<TFront, TBack> extends Props {
-    frontProps: TFront
-    backProps: TBack
+  frontProps: TFront
+  backProps: TBack
 }
 
 interface FlipCardState {
-    flipped: boolean
-    value: string
+  flipped: boolean
+  value: string
 }
 
 export interface CardFaceProps extends Props {
-    flip?: () => void
+  flip?: () => void
 }
 
 export function flipCard<PFront extends CardFaceProps, PBack extends CardFaceProps>(
-    Front: new () => React.Component<PFront, any>,
-    Back: new () => React.Component<PBack, any>
+  Front: new () => React.Component<PFront, any>,
+  Back: new () => React.Component<PBack, any>
 ): React.ComponentClass<FlipCardProps<PFront, PBack>> {
-    class FlipCardComponent extends React.Component<FlipCardProps<PFront, PBack>, FlipCardState> {
-        constructor(props: FlipCardProps<PFront, PBack>) {
-            super(props)
-            this.state = {
-                flipped: false,
-                value: ""
-            }
-        }
-
-        flip = () => {
-            this.setState({
-                flipped: !this.state.flipped
-            })
-        }
-
-        render() {
-            return (
-                <div className={this.props.className}>
-                    <div className={`${this.props.className} ${this.state.flipped ? "flip" : ""}`}>
-                        <div className="flipper">
-                            <div className="front">
-                                // tslint:disable-next-line:no-any
-                                <Front {...this.props.frontProps as any} flip={this.flip} />
-                            </div>
-                            <div className="back">
-                                // tslint:disable-next-line:no-any
-                                <Back {...this.props.backProps as any} flip={this.flip} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        }
+  class FlipCardComponent extends React.Component<FlipCardProps<PFront, PBack>, FlipCardState> {
+    constructor(props: FlipCardProps<PFront, PBack>) {
+      super(props)
+      this.state = {
+        flipped: false,
+        value: ""
+      }
     }
 
-    return styled(FlipCardComponent) `
+    flip = () => {
+      this.setState({
+        flipped: !this.state.flipped
+      })
+    }
+
+    render() {
+      return (
+        <div className={this.props.className}>
+          <div className={`${this.props.className} ${this.state.flipped ? "flip" : ""}`}>
+            <div className="flipper">
+              <div className="front">
+                <Front {...this.props.frontProps as any} flip={this.flip} />
+              </div>
+              <div className="back">
+                <Back {...this.props.backProps as any} flip={this.flip} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  }
+
+  return styled(FlipCardComponent) `
         display: inline-block;
         perspective: 1000px;
         width: 320px;
