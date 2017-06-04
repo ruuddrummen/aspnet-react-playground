@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Route } from "react-router-dom";
-import { Layout } from "./components/Layout";
-import { Home } from "./components/Home";
-import { FetchData } from "./components/FetchData";
-import { Counter } from "./components/Counter";
-import { DemoFlipCardPage } from "./pages/DemoFlipCardPage";
+import * as React from "react"
+import { Route } from "react-router-dom"
+import { Layout } from "./components/Layout"
+import { Home } from "./components/Home"
+import { FetchData } from "./components/FetchData"
+import { Counter } from "./components/Counter"
+import { DemoFlipCardPage } from "./pages/DemoFlipCardPage"
 
 export const routes = (
   <Layout>
@@ -13,4 +13,4 @@ export const routes = (
     <Route path="/counter" component={Counter} />
     <Route path="/fetchdata" component={FetchData} />
   </Layout>
-);
+)

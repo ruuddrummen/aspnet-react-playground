@@ -25,7 +25,10 @@ export class DemoFlipCard extends React.Component<null, DemoFlipCardState> {
 
   render() {
     const frontProps: FrontProps = { value: this.state.value }
-    const backProps: BackProps = { value: this.state.value, updateValue: this.updateValue }
+    const backProps: BackProps = {
+      value: this.state.value,
+      updateValue: this.updateValue
+    }
 
     return (
       <DemoFlipCardComponent frontProps={frontProps} backProps={backProps} />

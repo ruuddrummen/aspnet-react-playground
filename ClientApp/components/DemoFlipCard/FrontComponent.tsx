@@ -24,7 +24,7 @@ const FrontComponent: React.StatelessComponent<FrontProps> = props => {
   )
 }
 
-export const FrontFace = styled(FrontComponent) `
+export const FrontFace = styled(FrontComponent)`
   overflow: auto;
   background-color: palevioletred;
 `

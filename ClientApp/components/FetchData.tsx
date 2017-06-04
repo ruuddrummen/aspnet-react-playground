@@ -1,27 +1,27 @@
-import * as React from "react";
-import "isomorphic-fetch";
+import * as React from "react"
+import "isomorphic-fetch"
 
 interface FetchDataExampleState {
-  forecasts: WeatherForecast[];
-  loading: boolean;
+  forecasts: WeatherForecast[]
+  loading: boolean
 }
 
 export class FetchData extends React.Component<{}, FetchDataExampleState> {
   constructor() {
-    super();
-    this.state = { forecasts: [], loading: true };
+    super()
+    this.state = { forecasts: [], loading: true }
 
     fetch("/api/SampleData/WeatherForecasts")
       .then(response => response.json() as Promise<WeatherForecast[]>)
       .then(data => {
-        this.setState({ forecasts: data, loading: false });
-      });
+        this.setState({ forecasts: data, loading: false })
+      })
   }
 
   public render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
+      : FetchData.renderForecastsTable(this.state.forecasts)
 
     return (
       <div>
@@ -29,7 +29,7 @@ export class FetchData extends React.Component<{}, FetchDataExampleState> {
         <p>This component demonstrates fetching data from the server.</p>
         {contents}
       </div>
-    );
+    )
   }
 
   private static renderForecastsTable(forecasts: WeatherForecast[]) {
@@ -54,13 +54,13 @@ export class FetchData extends React.Component<{}, FetchDataExampleState> {
           )}
         </tbody>
       </table>
-    );
+    )
   }
 }
 
 interface WeatherForecast {
-  dateFormatted: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+  dateFormatted: string
+  temperatureC: number
+  temperatureF: number
+  summary: string
 }

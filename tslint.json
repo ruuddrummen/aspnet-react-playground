@@ -80,8 +80,8 @@
     ],
     "radix": true,
     "semicolon": [
-      false,
-      "always"
+      true,
+      "never"
     ],
     "switch-default": true,
     "trailing-comma": [
@@ -127,6 +127,7 @@
       "check-type",
       "check-typecast"
     ],
-    "jsx-boolean-value": false
+    "jsx-boolean-value": false,
+    "jsx-wrap-multiline": false
   }
 }

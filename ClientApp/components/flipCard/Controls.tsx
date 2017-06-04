@@ -16,19 +16,18 @@ interface FlipperProps extends Props {
   flipped: boolean
 }
 
-const FlipperComponent: React.StatelessComponent<FlipperProps> = props => (
+const FlipperComponent: React.StatelessComponent<FlipperProps> = props =>
   <div className={props.className}>
     {props.children}
   </div>
-)
 
-export const Card = styled(FlipperComponent) `
+export const Card = styled(FlipperComponent)`
   transition: 0.6s;
   transform-style: preserve-3d;
 
   position: relative;
 
-  transform: ${props => props.flipped ? "rotateY(180deg)" : "rotateY(0deg)"};
+  transform: ${props => (props.flipped ? "rotateY(180deg)" : "rotateY(0deg)")};
 `
 
 const CardFace = styled.div`
@@ -40,12 +39,12 @@ const CardFace = styled.div`
   left: 0;
 `
 
-export const CardFront = styled(CardFace) `
+export const CardFront = styled(CardFace)`
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
 `
 
-export const CardBack = styled(CardFace) `
+export const CardBack = styled(CardFace)`
   transform: rotateY(180deg);
 `

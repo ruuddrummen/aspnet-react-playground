@@ -1,13 +1,13 @@
-import * as React from "react";
+import * as React from "react"
 
 interface CounterState {
-  currentCount: number;
+  currentCount: number
 }
 
 export class Counter extends React.Component<{}, CounterState> {
   constructor() {
-    super();
-    this.state = { currentCount: 0 };
+    super()
+    this.state = { currentCount: 0 }
   }
 
   public render() {
@@ -19,14 +19,20 @@ export class Counter extends React.Component<{}, CounterState> {
 
         <p>Current count: <strong>{this.state.currentCount}</strong></p>
 
-        <button onClick={() => { this.incrementCounter() }}>Increment</button>
+        <button
+          onClick={() => {
+            this.incrementCounter()
+          }}
+        >
+          Increment
+        </button>
       </div>
-    );
+    )
   }
 
   incrementCounter() {
     this.setState({
       currentCount: this.state.currentCount + 1
-    });
+    })
   }
 }

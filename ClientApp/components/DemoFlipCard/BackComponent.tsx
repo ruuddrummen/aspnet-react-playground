@@ -9,8 +9,9 @@ export interface BackProps extends CardFaceProps {
 }
 
 const BackComponent: React.StatelessComponent<BackProps> = props => {
-  const flip = (event: React.MouseEvent<HTMLButtonElement>) => (props.flip())
-  const updateValue = (event: React.ChangeEvent<HTMLInputElement>) => (props.updateValue(event.currentTarget.value))
+  const flip = (event: React.MouseEvent<HTMLButtonElement>) => props.flip()
+  const updateValue = (event: React.ChangeEvent<HTMLInputElement>) =>
+    props.updateValue(event.currentTarget.value)
 
   return (
     <div className={props.className}>
@@ -28,7 +29,7 @@ const BackComponent: React.StatelessComponent<BackProps> = props => {
   )
 }
 
-export const BackFace = styled(BackComponent) `
+export const BackFace = styled(BackComponent)`
   overflow: auto;
   background-color: papayawhip;
 `
